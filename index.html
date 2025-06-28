@@ -1,106 +1,283 @@
-
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head> 
-  <!-- marcação  -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Minecraft - Retorne à Escuridão</title>
-  <link rel="stylesheet" href="styles.css">
-   <style>
+  <style>
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(to right, #000000, #0a0a23);
     color: white;
-    background-color: #0e0e0e;
-  background-image: url('imagens/MINE.jpg');
+  }
 
+  a {
+    text-decoration: none;
+    color: white;
+  }
 
-}
-  
-
-header {
+  /* === INÍCIO DO CABEÇALHO === */
+  header {
     background-color: #121212;
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
 
-nav ul {
+  nav ul {
     list-style: none;
     display: flex;
     padding: 0;
     margin: 0;
-}
+  }
 
-nav ul li {
+  nav ul li {
     margin: 0 15px;
-}
+  }
 
-nav ul li a {
-    text-decoration: none;
-    color: white;
-}
+  .auth a {
+    background: #0066cc;
+    padding: 6px 12px;
+    border-radius: 5px;
+  }
+  /* === FIM DO CABEÇALHO === */
 
-.hero {
+  main {
+    padding-top: 80px;
+  }
+
+  section {
+    padding: 60px 20px;
     text-align: center;
-    padding: 50px 20px;
-    background-image: url('background-image.jpg');
+  }
+
+  /* === INÍCIO HERO === */
+  .hero {
+    background-image: url('imagens/MINE.jpg');
     background-size: cover;
     background-position: center;
-}
+    color: white;
+  }
 
-.hero h1 {
+  .hero h1 {
     font-size: 2.5rem;
     margin-bottom: 20px;
-}
+  }
 
-.hero p {
+  .hero p {
     font-size: 1.2rem;
     margin-bottom: 30px;
-}
+  }
 
-.btn {
+  .hero a {
     padding: 10px 20px;
     background-color: #0066cc;
     color: white;
     text-decoration: none;
     border-radius: 5px;
-}
+  }
+  /* === FIM HERO === */
+
+  /* === INÍCIO GALERIA === */
+  .galeria h1 {
+    font-size: 2.5rem;
+    background: linear-gradient(to right, #3ab4f2, #ff2cc3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+  }
+
+  .galeria p {
+    color: #aaa;
+    margin-bottom: 30px;
+  }
+
+  .carrossel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cards {
+    display: flex;
+    width: 80%;
+    transition: transform 0.3s ease;
+  }
+
+  .card {
+    background: #111;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    margin: 0 10px;
+    min-width: 250px;
+    max-width: 250px;
+    padding-bottom: 15px;
+  }
+
+  .card img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .card h2 {
+    font-size: 1.1rem;
+    margin: 10px 0 5px;
+  }
+
+  .card span {
+    color: #0ff;
+    font-size: 0.8rem;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .card a {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 8px;
+    background: linear-gradient(to right, #0af, #c3f);
+    color: #fff;
+    font-size: 0.85rem;
+  }
+
+  .seta {
+    background: transparent;
+    border: none;
+    color: #0ff;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  .indicadores {
+    margin-top: 20px;
+  }
+
+  .indicadores span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #666;
+    margin: 0 5px;
+  }
+
+  .indicadores .ativo {
+    background: #0ff;
+  }
+  /* === FIM GALERIA === */
   </style>
 </head>
 <body> 
+  <!-- === INÍCIO DO CABEÇALHO === -->
   <header>
     <div class="logo">
       <h1>Blizzard</h1>
     </div>
     <nav>
       <ul>
-        <li><a href="#jogos">Jogos</a></li> 
-        <!-- lista ordenadas  -->
+        <li><a href="#hero">Início</a></li> 
+        <li><a href="#galeria">Galeria</a></li>
         <li><a href="#esports">Esports</a></li>
         <li><a href="#loja">Loja</a></li>
         <li><a href="#noticias">Notícias</a></li>
         <li><a href="#suporte">Suporte</a></li>
       </ul> 
-      <!-- listas n ordenadas  -->
     </nav> 
-    <!-- agrupa links -->
     <div class="auth">
       <a href="#login">Login</a>
     </div> 
-    <!-- agrupa e organiza  -->
   </header>
+  <!-- === FIM DO CABEÇALHO === -->
 
   <main>
-    <section class="hero">
+    <!-- === INÍCIO HERO === -->
+    <section id="hero" class="hero">
       <h1>Retorne à escuridão com o game Diablo IV</h1>
       <p>O retorno de Lilith traz uma era de escuridão e sofrimento</p>
-      <a href="#jogar">Jogue agora</a>
+      <a href="#galeria">Jogue agora</a>
     </section>
+    <!-- === FIM HERO === -->
+
+    <!-- === INÍCIO GALERIA === -->
+    <section id="galeria" class="galeria">
+      <h1><span class="icon">🔥</span> Explore Nossa Galeria Gamer</h1>
+      <p>Descubra os jogos mais épicos da nossa comunidade</p>
+      <div class="carrossel">
+        <button class="seta esquerda">&#8592;</button>
+        <div class="cards">
+          <div class="card">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="Forest Game" />
+            <h2>Stellar Odyssey</h2>
+            <span>SPACE ADVENTURE</span>
+            <a href="#">👁️ Ver Detalhes</a>
+          </div>
+          <div class="card">
+            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97" alt="Digital Fortress" />
+            <h2>Digital Fortress</h2>
+            <span>STRATEGY</span>
+            <a href="#">👁️ Ver Detalhes</a>
+          </div>
+          <div class="card">
+            <img src="https://images.unsplash.com/photo-1623051341416-bfd3b7db4f5a" alt="Matrix Reloaded" />
+            <h2>Matrix Reloaded</h2>
+            <span>ACTION RPG</span>
+            <a href="#">👁️ Ver Detalhes</a>
+          </div>
+        </div>
+        <button class="seta direita">&#8594;</button>
+      </div>
+      <div class="indicadores">
+        <span class="ativo"></span>
+        <span></span>
+        <span></span>
+      </div>
+    </section>
+    <!-- === FIM GALERIA === -->
   </main>
 
+  <script>
+    const esquerda = document.querySelector(".seta.esquerda");
+    const direita = document.querySelector(".seta.direita");
+    const cards = document.querySelector(".cards");
+    const indicadores = document.querySelectorAll(".indicadores span");
+
+    let index = 0;
+
+    function atualizarCarrossel() {
+      cards.style.transform = `translateX(-${index * 270}px)`;
+      indicadores.forEach((dot, i) => {
+        dot.classList.toggle("ativo", i === index);
+      });
+    }
+
+    direita.addEventListener("click", () => {
+      if (index < indicadores.length - 1) {
+        index++;
+        atualizarCarrossel();
+      }
+    });
+
+    esquerda.addEventListener("click", () => {
+      if (index > 0) {
+        index--;
+        atualizarCarrossel();
+      }
+    });
+
+    atualizarCarrossel();
+  </script>
 </body>
 </html>
